@@ -1,0 +1,151 @@
+body {
+    
+    background-image: url('../images/Clouds.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed, center;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 1.2em;
+}
+.questionOne {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border: solid 1px white;
+    border-radius: 200px;
+    background-color: red;
+    animation-name: questionOne;
+    animation-duration: 15s; 
+}
+    @keyframes questionOne {
+        0%   {left:4em; top:20em;}
+        50%  {left:4em; top:15em;}
+        75%  {left:4em; top:10em;}
+        100%  {left:2em; top:4em;}
+}
+.questionTwo {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border: solid 1px white;
+    border-radius: 200px;
+    background-color: blueviolet;
+    animation-name: questionTwo;
+    animation-duration: 18s; 
+    /* animation-delay: 16s; */
+}
+    @keyframes questionTwo {
+        0%   {left:6em; top:22em;}
+        50%  {left:9em; top:16em;}
+        75%  {left:5em; top:8em;}
+        100%  {left:17em; top:2em;}
+}
+.questionThree {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    border: solid 1px white;
+    border-radius: 200px;
+    background-color: rgb(255, 0, 200);
+    animation-name: questionThree;
+    animation-duration: 20s; 
+    /* animation-delay: 32s; */
+}
+    @keyframes questionThree {
+        0%   {left:18em; top:20em;}
+        50%  {left:18em; top:10em;}
+        75%  {left:16em; top:6em;}
+        100%  {left:6em; top:4em;}
+}
+.questionFour {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    border: solid 1px white;
+    border-radius: 200px;
+    background-color: rgb(255, 230, 0);
+    animation-name: questionFour;
+    animation-duration: 17s; 
+    /* animation-delay: 48s; */
+}
+    @keyframes questionFour {
+        0%   {left:12em; top:25em;}
+        50%  {left:10em; top:20em;}
+        75%  {left:8em; top:10em;}
+        100%  {left:20em; top:4em;}
+}
+.questionFive {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    border: solid 1px white;
+    border-radius: 200px;
+    background-color: rgb(0, 255, 213);
+    animation-name: questionFive;
+    animation-duration: 25s; 
+    /* animation-delay: 63s; */
+}
+    @keyframes questionFive {
+        0%   {left:33em; top:20em;}
+        50%  {left:20em; top:12em;}
+        75%  {left:22em; top:15em;}
+        100%  {left:10em; top:4em;}
+}
+p { position: relative;
+    top: 27%;
+    left: 2%;
+    color: white;
+}
+#timerOne {
+    position: relative;
+    text-align: center;
+    display: inline;
+    text-align: center;
+    left: 42%;
+    bottom: 10%;
+}
+#timerTwo {
+    position: relative;
+    text-align: center;
+    display: inline;
+    text-align: center;
+    left: 42%;
+    bottom: 10%;
+}
+#timerThree {
+    position: relative;
+    text-align: center;
+    display: inline;
+    text-align: center;
+    left: 42%;
+    bottom: 10%;
+}
+#timerFour {
+    position: relative;
+    text-align: center;
+    display: inline;
+    text-align: center;
+    left: 42%;
+    bottom: 10%;
+}
+#timerFive {
+    position: relative;
+    text-align: center;
+    display: inline;
+    text-align: center;
+    left: 42%;
+    bottom: 10%;
+}
+#countDown {
+    border: solid 1px black;
+    background-color: white;
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    left: 46%;
+    text-align: center;
+}
+#start {
+    position: absolute;
+    left: 40%;
+}
