@@ -51,6 +51,15 @@ statusQ();
 // setTimeout(fortyeightSeconds, 1000 * 48);
 // setTimeout(sixtythreeSeconds, 1000 * 63);
 
+
+click = $(".answer").on("click", function () {
+    console.log(click);
+    if (this.ID === "true") {
+        this.css("visibilty", "hidden");
+        correct++;
+        
+    }
+});
 // ----------FUNCTION PARTY--------------------------------------------
 // NOTHING IS REAL
 function statusQ() {
@@ -60,6 +69,7 @@ function statusQ() {
     $(".questionFour").css("display", "none");
     $(".questionFive").css("display", "none");
 }
+
 //START COUNTDOWN
 function startTimer() {
     clearInterval(intervalId);
@@ -76,9 +86,7 @@ function startTimer() {
     $("#timerFive").text(countFive);
     //if the correct answer is not chosen the balloon will "pop" && if the correct answer IS chosen the balloon will pop 
 };
-//CHECK USER CLICK
-function userChoice() {
-}
+
 //ASK QUESTION ONE
 function askQuestionOne() {
     clearInterval(intervalId);
@@ -88,11 +96,16 @@ function askQuestionOne() {
     //questions balloon appears on screen && displays question and answers
     questionOne.css("display", "block");
     $("#firstQ").html(questions[0].question);
-    for (var i = 0; i < questions[0].choices.length; i++) {
-        $("#firstA").append('<button class="userAnswer" id="button">' + questions[0].choices[i] + '</button>');
-    }
-    userChoice();
+    //CHECK USER CLICK
+    click = $("firstA").on("click", "#button", function () {
+        if (click === questions[1].correct) {
+            console.log(click);
+            $(".questionOne").css("visibility", "hidden");
+            correct++;
+        }
+    })
 }
+
 
 //ASK QUESTION TWO
 function askQuestionTwo() {
@@ -102,18 +115,15 @@ function askQuestionTwo() {
 
     $("#questionTwo").css("display", "block");
     $("#secondQ").html(questions[1].question);
-    for (var i = 0; i < questions[1].choices.length; i++) {
-        $("#secondA").append('<button class="userAnswer" id="button">' + questions[1].choices[i] + '</button>');
-    }
-    // }, 16000);
-    // if (count === -1) {
-    //     $(".questionTwo").css("visibility", "hidden");
-    //     stop();
-    //     currentQuestion++;
-    //     count = 15;
-    //     incorrect++;
-    // }
 }
+// }, 16000);
+// if (count === -1) {
+//     $(".questionTwo").css("visibility", "hidden");
+//     stop();
+//     currentQuestion++;
+//     count = 15;
+//     incorrect++;
+// }
 
 function askQuestionThree() {
     $(".questionThree").css("display", "block");
@@ -123,10 +133,7 @@ function askQuestionThree() {
 
     $("#timerThree").text(countThree);
     $("#thirdQ").html(questions[3].question);
-    for (var i = 0; i < questions[3].choices.length; i++) {
-        $("#thirdA").append('<button class="userAnswer" id="button">' + questions[3].choices[i] + '</button>');
 
-    }
 }
 function askQuestionFour() {
     $(".questionFour").css("display", "block");
@@ -134,11 +141,8 @@ function askQuestionFour() {
     intervalId = setInterval(startTimer, 1000);
 
     $("#fourthQ").html(questions[4].question);
-    for (var i = 0; i < questions[4].choices.length; i++) {
-        $("#fourthA").append('<button class="userAnswer" id="button">' + questions[4].choices[i] + '</button>');
 
 
-    }
 }
 function askQuestionFive() {
     $(".questionFive").css("display", "block");
@@ -146,11 +150,6 @@ function askQuestionFive() {
     intervalId = setInterval(startTimer, 1000);
 
     $("#fifthQ").html(questions[5].question);
-    for (var i = 0; i < questions[5].choices.length; i++) {
-        $("#fifthA").append('<button class="userAnswer" id="button">' + questions[5].choices[i] + '</button>');
-
-
-    }
 }
 
 
@@ -165,6 +164,7 @@ function startGame() {
     askQuestionThree();
     askQuestionFour();
     askQuestionFive();
+
 
 
 }
