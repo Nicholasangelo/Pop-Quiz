@@ -8,6 +8,7 @@ body {
     font-size: 1.2em;
 }
 .questionOne {
+    text-align: center;
     position: absolute;
     width: 340px;
     height: 340px;
@@ -24,6 +25,7 @@ body {
         100%  {left:2em; top:4em;}
 }
 .questionTwo {
+    text-align: center;
     position: absolute;
     width: 340px;
     height: 340px;
@@ -41,6 +43,7 @@ body {
         100%  {left:17em; top:2em;}
 }
 .questionThree {
+    text-align: center;
     position: relative;
     width: 340px;
     height: 340px;
@@ -58,6 +61,7 @@ body {
         100%  {left:6em; top:4em;}
 }
 .questionFour {
+    text-align: center;
     position: relative;
     width: 340px;
     height: 340px;
@@ -75,6 +79,7 @@ body {
         100%  {left:20em; top:4em;}
 }
 .questionFive {
+    text-align: center;
     position: relative;
     width: 340px;
     height: 340px;
@@ -92,16 +97,16 @@ body {
         100%  {left:10em; top:4em;}
 }
 p { position: relative;
-    top: 27%;
+    top: 35%;
     left: 2%;
-    color: white;
+    color: black;
+    font-size: 1.2em;
 }
 #timerOne {
     position: relative;
     text-align: center;
     display: inline;
     text-align: center;
-    left: 42%;
     bottom: 10%;
 }
 #timerTwo {
@@ -109,7 +114,6 @@ p { position: relative;
     text-align: center;
     display: inline;
     text-align: center;
-    left: 42%;
     bottom: 10%;
 }
 #timerThree {
@@ -117,7 +121,6 @@ p { position: relative;
     text-align: center;
     display: inline;
     text-align: center;
-    left: 42%;
     bottom: 10%;
 }
 #timerFour {
@@ -125,7 +128,6 @@ p { position: relative;
     text-align: center;
     display: inline;
     text-align: center;
-    left: 42%;
     bottom: 10%;
 }
 #timerFive {
@@ -133,7 +135,6 @@ p { position: relative;
     text-align: center;
     display: inline;
     text-align: center;
-    left: 42%;
     bottom: 10%;
 }
 #countDown {
@@ -150,7 +151,7 @@ p { position: relative;
     border: solid 1px black;
     background: radial-gradient(white, purple);
     position: fixed;
-    left: 60%;
+    left: 56%;
     top: 18%;
     text-align: center;
     font-weight: bolder;
@@ -161,7 +162,7 @@ p { position: relative;
     border: solid 1px black;
     background: radial-gradient(white, orange);
     position: fixed;
-    left: 65%;
+    left: 63%;
     top: 22%;
     text-align: center;
     font-weight: bolder;
@@ -172,3 +173,7 @@ p { position: relative;
     position: absolute;
     left: 46%;
 }
+#restart {
+    position: absolute;
+    left: 40%;
+)

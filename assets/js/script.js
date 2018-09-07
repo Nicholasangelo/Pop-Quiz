@@ -35,12 +35,9 @@ var countThree = 20;
 var countFour = 17;
 var countFive = 25;
 var intervalId;
-var incorrect;
-var correct;
+var incorrect = 0;
+var correct = 0;
 
-
-//SEND VAR TO HTML
-$("#countDown").html(incorrect);
 
 //SETS STATUS QUO -- PAGE BEFORE START
 statusQ();
@@ -52,14 +49,6 @@ statusQ();
 // setTimeout(sixtythreeSeconds, 1000 * 63);
 
 
-click = $(".answer").on("click", function () {
-    console.log(click);
-    if (this.ID === "true") {
-        this.css("visibilty", "hidden");
-        correct++;
-        
-    }
-});
 // ----------FUNCTION PARTY--------------------------------------------
 // NOTHING IS REAL
 function statusQ() {
@@ -68,6 +57,8 @@ function statusQ() {
     $(".questionThree").css("display", "none");
     $(".questionFour").css("display", "none");
     $(".questionFive").css("display", "none");
+
+    $("#restart").css("display", "none");
 }
 
 //START COUNTDOWN
@@ -84,8 +75,22 @@ function startTimer() {
     $("#timerThree").text(countThree);
     $("#timerFour").text(countFour);
     $("#timerFive").text(countFive);
-    //if the correct answer is not chosen the balloon will "pop" && if the correct answer IS chosen the balloon will pop 
+
+    if (countOne <= -1) {
+        $(".questionOne").text("Float Away");
+    } if (countTwo <= -1) {
+        $(".questionTwo").text("Float Away");
+    } if (countThree <= -1) {
+        $(".questionThree").text("Float Away");
+    } if (countFour <= -1) {
+        $(".questionFour").text("Float Away");
+    } if (countFive <= -1) {
+        $(".questionFive").text("Float Away");
+
+    }
 };
+
+
 
 //ASK QUESTION ONE
 function askQuestionOne() {
@@ -96,14 +101,6 @@ function askQuestionOne() {
     //questions balloon appears on screen && displays question and answers
     questionOne.css("display", "block");
     $("#firstQ").html(questions[0].question);
-    //CHECK USER CLICK
-    click = $("firstA").on("click", "#button", function () {
-        if (click === questions[1].correct) {
-            console.log(click);
-            $(".questionOne").css("visibility", "hidden");
-            correct++;
-        }
-    })
 }
 
 
@@ -116,15 +113,7 @@ function askQuestionTwo() {
     $("#questionTwo").css("display", "block");
     $("#secondQ").html(questions[1].question);
 }
-// }, 16000);
-// if (count === -1) {
-//     $(".questionTwo").css("visibility", "hidden");
-//     stop();
-//     currentQuestion++;
-//     count = 15;
-//     incorrect++;
-// }
-
+// ASK QUESTION THREE
 function askQuestionThree() {
     $(".questionThree").css("display", "block");
     clearInterval(intervalId);
@@ -132,27 +121,52 @@ function askQuestionThree() {
 
 
     $("#timerThree").text(countThree);
-    $("#thirdQ").html(questions[3].question);
+    $("#thirdQ").html(questions[2].question);
 
 }
+//ASK QUESTON FOUR
 function askQuestionFour() {
     $(".questionFour").css("display", "block");
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
 
-    $("#fourthQ").html(questions[4].question);
+    $("#fourthQ").html(questions[3].question);
 
 
 }
+// ASK QUESTION FIVE
 function askQuestionFive() {
     $(".questionFive").css("display", "block");
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
 
-    $("#fifthQ").html(questions[5].question);
+    $("#fifthQ").html(questions[4].question);
 }
 
-
+// CLICK EVENT
+$(".answer").on("click", function () {
+    console.log($(this).text());
+    if ($(this).text() === "An Ape") {
+        correct++;
+        $(".questionOne").css("visibility", "hidden");
+    } if ($(this).text() === 'True') {
+        correct++;
+        $(".questionTwo").css("visibility", "hidden");
+    } if ($(this).text() === '1824') {
+        correct++;
+        $(".questionThree").css("visibility", "hidden");
+    } if ($(this).text() === 'Graphene') {
+        correct++;
+        $(".questionFour").css("visibility", "hidden");
+    } if ($(this).text() === 'Cold War paranoia') {
+        correct++;
+        $(".questionFive").css("visibility", "hidden");
+    } else (incorrect++);
+    
+    $("#correct").text("Correct: " + correct);
+    $("#incorrect").text("Incorrect: " + incorrect);
+    
+});
 
 //START GAME
 function startGame() {

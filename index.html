@@ -17,7 +17,8 @@
         <h1 id="countDown">POP!quiz!</h1>
         <div id="correct"></div>
         <div id="incorrect"></div>
-        <button id="start" onclick="startGame()">Start Game</button>    
+        <button id="start" onclick="startGame()">Start Game</button>  
+        <button id="restart" onclick="restartGame()">Restart Game</button>  
     </section>
     
     <div class="questionOne">
@@ -25,13 +26,13 @@
         <p id="firstQ"></p>
         <button class="answer">A Rooster</button>
         <button class="answer">A Duck</button>
-        <button class="answer" id="true">An Ape</button>
+        <button class="answer" data-true="true">An Ape</button>
         <button class="answer">A Sheep</button>
     </div>
     <div class="questionTwo">
         <div id="timerTwo"></div>
         <p id="secondQ"></p>
-        <button class="answer" id="true">True</button>
+        <button class="answer" data-true="true">True</button>
         <button class="answer">False</button>
     </div>
     <div class="questionThree">
@@ -40,12 +41,12 @@
         <button class="answer">1791</button>
         <button class="answer">1802</button>
         <button class="answer">1690</button>
-        <button class="answer" id="true">1824</button>
+        <button class="answer" data-true="true">1824</button>
     </div>
     <div class="questionFour">
         <div id="timerFour"></div>
         <p id="fourthQ"></p>
-        <button class="answer" id="true">Graphene</button>
+        <button class="answer" data-true="true">Graphene</button>
         <button class="answer">Rubber</button>
         <button class="answer">Latex</button>
         <button class="answer">Nylon</button>
@@ -55,7 +56,7 @@
         <p id="fifthQ"></p>
         <button class="answer">Latex killing Sea Turtles</button>
         <button class="answer">A drunk clow at the singers birthday party</button>
-        <button class="answer" id="true">Cold War paranoia</button>
+        <button class="answer" data-true="true">Cold War paranoia</button>
         <button class="answer">A sick acid trip</button>
     </div>
 
