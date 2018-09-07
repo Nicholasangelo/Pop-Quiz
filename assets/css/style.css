@@ -105,11 +105,11 @@ body {
     border-radius: 200px;
     background: radial-gradient(white, rgb(253, 173, 0));
     animation-name: questionSix;
-    animation-duration: 19s; 
+    animation-duration: 30s; 
     /* animation-delay: 63s; */
 }
     @keyframes questionSix {
-        0%   {left:40em; top:30em;}
+        0%   {left:40em; top:17em;}
         50%  {left:30em; top:12em;}
         75%  {left:22em; top:22em;}
         100%  {left:10em; top:6em;}

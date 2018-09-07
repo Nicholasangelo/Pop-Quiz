@@ -34,7 +34,7 @@ var countTwo = 18;
 var countThree = 20;
 var countFour = 17;
 var countFive = 25;
-var countSix = 19;
+var countSix = 30;
 var intervalId;
 var incorrect = 0;
 var correct = 0;
@@ -70,10 +70,20 @@ function win() {
     }
 }
 
-// setTimeout(lose, 27000); {
-//     alert("Not so good, maybe next time");
-// }
-
+function restart() {
+    $("#restart").on("click", function() {
+    statusQ();
+    countOne = 15;
+    countTwo = 18;
+    countThree = 20;
+    countFour = 17;
+    countFive = 25;
+    countSix = 30;
+    intervalId;
+    incorrect = 0;
+    correct = 0;
+})
+}
 
 //START COUNTDOWN
 function startTimer() {
@@ -104,6 +114,8 @@ function startTimer() {
         $(".questionFive").text("Float Away");
     } if (countSix <= -1) {
         $(".questionSix").text("Float Away");
+        $("#restart").css("display", "block")
+        $("#start").css("display", "none")
 
     }
 };
@@ -192,6 +204,9 @@ $(".answer").on("click", function () {
     win();
 });
 
+// setTimeout(lose, 27000); {
+//     alert("Not so good, maybe next time");
+// }
 
 //START GAME
 function startGame() {
