@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,20 @@
     <link rel="stylesheet" type="reset/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
+
     <title>Balloon Trivia!</title>
 </head>
+
 <body>
 
     <section id="startGame">
         <h1 id="countDown">POP!quiz!</h1>
-        <div id="correct"></div>
-        <div id="incorrect"></div>
-        <button id="start" onclick="startGame()">Start Game</button>  
-        <button id="restart" onclick="restartGame()">Restart Game</button>  
+        <div id="correct">Correct: </div>
+        <div id="incorrect">Incorrect: </div>
+        <button id="start" onclick="startGame()">Start Game</button>
+        <button id="restart" onclick="restartGame()">Restart Game</button>
     </section>
-    
+
     <div class="questionOne">
         <div id="timerOne"></div>
         <p id="firstQ"></p>
@@ -54,12 +56,22 @@
     <div class="questionFive">
         <div id="timerFive"></div>
         <p id="fifthQ"></p>
+        <button class="answer">The Red Dragon</button>
+        <button class="answer">The Red Shoes</button>
+        <button class="answer" data-true="true">The Red Balloon</button>
+        <button class="answer">The Red Violin</button>
+    </div>
+    <div class="questionSix">
+        <div id="timerSix"></div>
+        <p id="sixthQ"></p>
         <button class="answer">Latex killing Sea Turtles</button>
         <button class="answer">A drunk clow at the singers birthday party</button>
         <button class="answer" data-true="true">Cold War paranoia</button>
         <button class="answer">A sick acid trip</button>
     </div>
 
-    <script type= "text/javascript" src="assets/js/script.js"></script>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
+
 </html>

@@ -34,6 +34,7 @@ var countTwo = 18;
 var countThree = 20;
 var countFour = 17;
 var countFive = 25;
+var countSix = 19;
 var intervalId;
 var incorrect = 0;
 var correct = 0;
@@ -57,9 +58,22 @@ function statusQ() {
     $(".questionThree").css("display", "none");
     $(".questionFour").css("display", "none");
     $(".questionFive").css("display", "none");
+    $(".questionSix").css("display", "none");
 
     $("#restart").css("display", "none");
 }
+
+//WIN || LOSE
+function win() {
+    if (correct === 6) {
+        alert("Congratulations, you are a real Airhead!");
+    }
+}
+
+// setTimeout(lose, 27000); {
+//     alert("Not so good, maybe next time");
+// }
+
 
 //START COUNTDOWN
 function startTimer() {
@@ -70,11 +84,13 @@ function startTimer() {
     countThree--;
     countFour--;
     countFive--;
+    countSix--;
     $("#timerOne").text(countOne);
     $("#timerTwo").text(countTwo);
     $("#timerThree").text(countThree);
     $("#timerFour").text(countFour);
     $("#timerFive").text(countFive);
+    $("#timerSix").text(countSix);
 
     if (countOne <= -1) {
         $(".questionOne").text("Float Away");
@@ -86,6 +102,8 @@ function startTimer() {
         $(".questionFour").text("Float Away");
     } if (countFive <= -1) {
         $(".questionFive").text("Float Away");
+    } if (countSix <= -1) {
+        $(".questionSix").text("Float Away");
 
     }
 };
@@ -96,21 +114,18 @@ function startTimer() {
 function askQuestionOne() {
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
-
     questionOne = $(".questionOne");
     //questions balloon appears on screen && displays question and answers
     questionOne.css("display", "block");
     $("#firstQ").html(questions[0].question);
 }
 
-
 //ASK QUESTION TWO
 function askQuestionTwo() {
+    $(".questionTwo").css("display", "block");
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
-    // setTimeout(function (askQuestionTwo) {
 
-    $("#questionTwo").css("display", "block");
     $("#secondQ").html(questions[1].question);
 }
 // ASK QUESTION THREE
@@ -119,8 +134,6 @@ function askQuestionThree() {
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
 
-
-    $("#timerThree").text(countThree);
     $("#thirdQ").html(questions[2].question);
 
 }
@@ -130,8 +143,7 @@ function askQuestionFour() {
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
 
-    $("#fourthQ").html(questions[3].question);
-
+    $("#fourthQ").html(questions[4].question);
 
 }
 // ASK QUESTION FIVE
@@ -140,7 +152,15 @@ function askQuestionFive() {
     clearInterval(intervalId);
     intervalId = setInterval(startTimer, 1000);
 
-    $("#fifthQ").html(questions[4].question);
+    $("#fifthQ").html(questions[3].question);
+}
+// ASK QUESTION six
+function askQuestionSix() {
+    $(".questionSix").css("display", "block");
+    clearInterval(intervalId);
+    intervalId = setInterval(startTimer, 1000);
+
+    $("#sixthQ").html(questions[5].question);
 }
 
 // CLICK EVENT
@@ -158,15 +178,20 @@ $(".answer").on("click", function () {
     } if ($(this).text() === 'Graphene') {
         correct++;
         $(".questionFour").css("visibility", "hidden");
-    } if ($(this).text() === 'Cold War paranoia') {
+    } if ($(this).text() === 'The Red Balloon') {
         correct++;
         $(".questionFive").css("visibility", "hidden");
+    } if ($(this).text() === 'Cold War paranoia') {
+        correct++;
+        $(".questionSix").css("visibility", "hidden");
     } else (incorrect++);
-    
+
     $("#correct").text("Correct: " + correct);
     $("#incorrect").text("Incorrect: " + incorrect);
-    
+
+    win();
 });
+
 
 //START GAME
 function startGame() {
@@ -178,6 +203,7 @@ function startGame() {
     askQuestionThree();
     askQuestionFour();
     askQuestionFive();
+    askQuestionSix();
 
 
 

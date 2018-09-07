@@ -96,6 +96,24 @@ body {
         75%  {left:22em; top:15em;}
         100%  {left:10em; top:4em;}
 }
+.questionSix {
+    text-align: center;
+    position: relative;
+    width: 340px;
+    height: 340px;
+    border: solid 1px white;
+    border-radius: 200px;
+    background: radial-gradient(white, rgb(253, 173, 0));
+    animation-name: questionSix;
+    animation-duration: 19s; 
+    /* animation-delay: 63s; */
+}
+    @keyframes questionSix {
+        0%   {left:40em; top:30em;}
+        50%  {left:30em; top:12em;}
+        75%  {left:22em; top:22em;}
+        100%  {left:10em; top:6em;}
+    }
 p { position: relative;
     top: 35%;
     left: 2%;
@@ -131,6 +149,13 @@ p { position: relative;
     bottom: 10%;
 }
 #timerFive {
+    position: relative;
+    text-align: center;
+    display: inline;
+    text-align: center;
+    bottom: 10%;
+}
+#timerSix {
     position: relative;
     text-align: center;
     display: inline;
@@ -176,4 +201,4 @@ p { position: relative;
 #restart {
     position: absolute;
     left: 40%;
-)
+}
