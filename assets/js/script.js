@@ -67,21 +67,24 @@ function statusQ() {
 function win() {
     if (correct === 6) {
         alert("Congratulations, you are a real Airhead!");
+        restart();
     }
 }
 
 function restart() {
     $("#restart").on("click", function() {
     statusQ();
+    $("#start").css("display", "block");
+    startTimer();
     countOne = 15;
     countTwo = 18;
     countThree = 20;
     countFour = 17;
     countFive = 25;
     countSix = 30;
-    intervalId;
     incorrect = 0;
     correct = 0;
+
 })
 }
 
@@ -220,6 +223,6 @@ function startGame() {
     askQuestionFive();
     askQuestionSix();
 
-
+restart();
 
 }

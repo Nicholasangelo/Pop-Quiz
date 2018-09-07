@@ -1,5 +1,6 @@
 body {
     
+    /* background-image: url('../images/Clouds2.png'); */
     background-image: url('../images/Clouds.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -50,7 +51,7 @@ body {
 }
 .questionThree {
     text-align: center;
-    position: relative;
+    position: absolute;
     width: 340px;
     height: 340px;
     border: solid 1px white;
